@@ -12,7 +12,8 @@ mooApp.controller('MooController', ['$log', MooController]);
 
 function MooController($log) {
   $log.debug('MooController');
-  this.title = 'Cows are the Best!';
+  this.title = 'Wisdom of the Cow';
+  this.name = 'cowabunga.io';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
