@@ -17,12 +17,13 @@
     </header>
 
     <main>
+      <div class="wrapper">
       <section
         class="container"
         ng-controller="CowsayController as cowsayCtrl"
         ng-init="cowsayCtrl.current = 'rabbit'">
         <section>
-          <h2>{{ cowsayCtrl.title }}</h2> <h3> {{ cowsayCtrl.secondTitle }}</h3>
+          <h2>{{ cowsayCtrl.title }}</h2> <h3>make it, view it, undo it.</h3>
         </section>
 
         <div class="animal">
@@ -48,7 +49,7 @@
           <div ng-show="cowsayCtrl.spoken" class="history">
             <p>____________________________________________________________</p>
             <section>
-              <h2>{{ cowsayCtrl.subTitle }}</h2> <h3> {{ cowsayCtrl.subSubTitle }}</h3>
+              <h2>View It!</h2> <h3> check out the cow you just made</h3>
             </section>
             <div class= "animal">
             <pre >
@@ -60,4 +61,8 @@
         </form>
       </section>
     </main>
+    <div class="push"></div>
+  </div>
+  <footer class="footer">control.io</footer>
   </body>
+  </html>
