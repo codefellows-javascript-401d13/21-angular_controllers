@@ -14,28 +14,27 @@ h2 {
   font-size: 1vw;
   margin-bottom: 5%;
   color: #4a4a4a;
+  margin-left: 5%;
 }
 
-button {
-  width: 25%;
-  padding: 2% 0;
-  margin-bottom: 20px;
-  background: #4a4a4a;
-  color: white;
+input[type="text"] {
+  float: left;
+  width: 96%;
+  padding: 2%;
   border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 350ms all;
 }
 
 pre {
   overflow: auto;
-  width: 100%;
+  width: 50%;
   border: 2px solid #4a4a4a;
   font-family: Ubuntu Mono;
   margin: 5%;
 }
 
+.ng-binding {
+  font-size: 2vw;
+}
 
 nav {
   height: 4vw;
@@ -61,6 +60,49 @@ nav {
 }
 
 #righttop {
+  margin-top: -30%;
   float: right;
 
+}
+
+#rightbottom {
+  margin-top: -10%;
+  margin-right: 20%;
+  float: right;
+
+}
+
+
+
+#submitbutton {
+  width: 50%;
+  padding: 3% 0;
+  margin-bottom: 0;
+  background: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 350ms all;
+}
+
+
+#undobutton {
+  width: 200%;
+  padding: 20% 0;
+  margin-bottom: 20px;
+  background: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 350ms all;
+}
+
+footer {
+  // height: 4vw;
+  background: #9b9b9b;
+  padding: 2vw;
+  text-align: right;
+  color: #4a4a4a;
 }

@@ -31,25 +31,33 @@
           name="cowsayForm"
           no validate>
           <div id="righttop">
+            <ul>
+          <li><h3>Select a Cowfile.</h3></li>
           <select ng-model="cowsayCtrl.current">
-            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
+            <li><option id="selectcowfile" ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
               {{ cowfile }}
-            </option>
+            </option></li>
           </select>
-
-          <input type="text" ng-model="cowsayCtrl.text" required>
-          <button type="submit">Speak!</button>
+          <li><h3>What does it say?</h3></li>
+          <input id="inputbutton" type="text" ng-model="cowsayCtrl.text" required>
+          <li><h3>View it!</h3></li>
+          <li><button id="submitbutton" type="submit">CLICK TO VIEW</button></li>
+          </ul>
           </div>
-          <div id="rightbottom">
+          <hr>
           <div ng-show="cowsayCtrl.spoken" class="history">
             <pre>
               {{ cowsayCtrl.spoken }}
             </pre>
-            <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
+          <div id="rightbottom">
+            <button id="undobutton" type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
           </div>
           </div>
         </form>
       </section>
+      <footer>
+        <h3>cowcontrol.io</h3>
+      </footer>
     </main>
   </body>
 </html>
