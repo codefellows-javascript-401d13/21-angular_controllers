@@ -1,0 +1,161 @@
+$bgColor: #D8D8D8;
+$headerColor: #4A4A4A;
+$footerColor: #9B9B9B;
+$reverseTextColor: #9b9b9b;
+$primaryText: 3.5vw;
+$secondaryText: 2vw;
+$tertiaryText: 1.8vw;
+$fontStack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+body {
+    background: $bgColor;
+    font-family: $fontStack;
+    a {
+      text-decoration: none;
+    }
+    title{
+    }
+    nav {
+      background: $headerColor;
+      color: $reverseTextColor;
+      font-size: $primaryText;
+      width: 100%;
+      .logo{
+        width: 48%;
+        float: left;
+        margin: 1%;
+        img {
+          float:left;
+          margin:0 15px 0 15px;
+        }
+
+        span {
+          vertical-align: middle;
+          vertical-align: -webkit-baseline-middle;
+        }
+      }
+      .links{
+        margin: 1%;
+        width: 48%;
+        float: left;
+        text-align: right;
+        li {
+          display: inline-block;
+          vertical-align: -webkit-baseline-middle;
+          margin-right: 5%;
+
+
+        }
+        a {
+            color: $reverseTextColor;
+          }
+      }
+
+    }
+    main {
+      max-width: 98%;
+    }
+
+    section {
+      width:90%;
+      padding:20px;
+
+
+      margin:0 auto 0 auto;
+      h2 {
+        font-size: $primaryText;
+        font-weight: normal;
+        display: inline-block;
+
+      }
+        h3 {
+          font-size: $tertiaryText;
+          display: inline-block;
+        }
+      div.cowset{
+        margin: 0 0 0 0;
+        padding-bottom:60px;
+        border-bottom: 2px solid $footerColor;
+
+
+        .field-group {
+
+          margin: 20px 0 0  0 ;
+          font-size: $secondaryText;
+
+          display: flex;
+
+          .input-wrapper{
+            display: flex; /* or inline-flex */
+            flex-direction: column; /* or column */
+            align-items: stretch;
+            justify-content: flex-end;
+            width:25%;
+            position: relative;
+
+          }
+          .input-pair{
+            position: relative;
+            flex-grow: 1;
+                }
+
+
+
+          input{
+          }
+        }
+          label, button, input, select{
+            display: block;
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+          }
+          label{
+            margin-top:15px;
+          }
+          button, input, select{
+            position: absolute;
+            bottom:0px;
+          }
+
+          button{
+            background-color: #4A4A4A;
+            color: #fff;
+
+          }
+        pre{
+          font-family: Consolas, Courier, monospace;
+          font-size: 2vw;
+          padding:2em;
+          margin:0px 3% 0px 0;
+          background: $bgColor;
+          border: 2px solid black;
+          width: 60%;
+          display: inline-block;
+          overflow: hidden;
+          // float: left;
+        }
+      }
+
+  }
+  h2{
+    font-weight: bold;
+    font-size: 2em;
+    margin: 15px 20px 15px 0px;
+  }
+  .clearfix{
+    clear:both;
+  }
+  footer{
+    height: 100px;
+    background-color: $footerColor;
+    color: $reverseTextColor/2;
+    position: relative;
+    p {
+      position:absolute;
+      bottom: 10px;
+      right: 10px;
+          }
+  }
+}

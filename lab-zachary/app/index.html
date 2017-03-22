@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+<head>
+  <title>This is what the cow says</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <nav ng-controller="CowsayNav as nav">
+  <div class="logo">
+    <img src="../assets/icon.png">
+    <span>cowcontrol.io</span>
+  </div>
+  <div class="links">
+    <ul>
+      <li ng-repeat="link in nav.routes">
+        <a href="{{link.url}}">{{link.name}}</a>
+      </li>
+    </ul>
+    </div>
+    <div class="clearfix"></div>
+  </nav>
+  <main>
+    <section
+    class="container"
+    ng-controller="CowsayController as cowsayCtrl"
+    ng-init="cowsayCtrl.current = 'default'"
+    >
+    <div class="cowset">
+      <h2>{{ cowsayCtrl.title }}</h2>
+      <h3> {{ cowsayCtrl.subtitle }} </h3>
+        <div class="field-group">
+          <pre >{{ cowsayCtrl.cowUpdate(cowsayCtrl.text) }} </pre>
+            <form
+            ng-submit="cowsayCtrl.theCowSays(cowsayCtrl.text)"
+            class="input-wrapper"
+            >
+                <div class="input-pair">
+                <label for="cowfiles">Select a cowfile.</label>
+                <select ng-model="cowsayCtrl.current" name="cowfiles">
+                  <option ng-repeat="cow in cowsayCtrl.cowfiles" value="{{cow}}">
+                  {{ cow }}
+                  </option>
+                </select>
+                </div>
+                <div class="input-pair">
+                <label for="cowsaytext">What does it say?</label>
+                <input type="text" ng-model="cowsayCtrl.text" name="cowsaytext">
+                </div>
+                <div class="input-pair">
+                <label for="cowsaysubmit">View it!</label>
+                <button type="submit" name="cowsaysubmit">Click to View</button>
+                </div>
+            </form>
+          </div class="field-group">
+          <div class="clearfix"></div>
+        </div>
+
+      <div class="cowset" ng-show="cowsayCtrl.spoken">
+        <h2>view it!</h2>
+        <h3>check out the cow you just made!</h3>
+        <div class="field-group">
+        <pre>{{ cowsayCtrl.spoken }}</pre>
+          <div class="input-wrapper">
+            <button ng-click="cowsayCtrl.undo()">Undo This Cow!</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+<footer>
+<p class="contact">cowcontrol.io</p>
+</footer>
+</body>
+</html>
