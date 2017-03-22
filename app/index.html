@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html ng-app=>
+<html ng-app='mooMooApp'>
   <head>
     <meta charset="utf-8">
     <title>MOOMOO #2</title>
   </head>
   <body>
+    <section class="cow-container" ng-controller="CowsayController as cowsayCtrl"
+    ng-init="cowsayCtrl.current = default">
+      <div class="cow-header">
+        <h2> {{ cowsayCtrl.title }}</h2>
+        <p>make it, view it, and undo it!</p>
+      </div>
 
+      <pre class="cow">
+        {{ cowsayCtrl.update(cowsayCtrl.text) }}
+      </pre>
+
+      <form ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+      name="cowsayForm"
+      novalidate>
+        <select ng-model="cowsayCtrl.current">
+          <option ng-repeat="cowfile in cowsayCtrl.cowfiles"
+          value="{{ cowfile }}">
+          {{ cowfile }}
+          </option>
+        </select>
+        <input type='text' ng-model="cowsayCtrl.text" required>
+        <button type="submit">Make me talk!></button>
+      </form>
+
+      <div ng-show="cowsayCtrl.spoken" class="history">
+        <pre class="cow">
+          {{ cowsayCtrl.spoken }}
+        </pre>
+        <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
+      </div>
+
+    </section>
   </body>
 </html>
