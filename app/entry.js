@@ -23,7 +23,7 @@ function CowsayController($log) {
 
   this.update = function(input) {
     $log.debug('cowsayCtrl.update');
-    return cowsay.say( {text: input || 'Fricken Moo', f: this.current} );
+    return cowsay.say( {text: input || 'cowcontrol.io', f: this.current} );
   };
 
   this.speak = function(input) {
