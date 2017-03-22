@@ -39,6 +39,24 @@ describe('Swaggycow Controller', function() {
   });
 
   describe('#speak', () => {
-    it('should return an output that says testswag');
+    it('should return an output that says testswag', () => {
+      let expected = cowsay.say({ text: 'testswag', f: this.swaggycowCtrl.current });
+      this.swaggycowCtrl.speak('testswag');
+      expect(this.swaggycowCtrl.spoken).toEqual(expected);
+      expect(this.swaggycowCtrl.history[0]).toEqual(expected);
+    });
   });
+
+  describe('#undo', () => {
+    it('should return a cow that says testing', () => {
+      let expected = cowsay.say({ text: 'testswag', f: this.swaggycowCtrl.current });
+      this.swaggycowCtrl.speak('testswag');
+      this.swaggycowCtrl.speak('testswag more swag');
+      this.swaggycowCtrl.undo();
+      expect(this.swaggycowCtrl.spoken).toEqual(expected);
+      expect(this.swaggycowCtrl.history.length).toEqual(0);
+    });
+  });
+
+
 });
