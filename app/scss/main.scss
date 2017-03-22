@@ -6,8 +6,15 @@ $font-color: #484848;
 
 //:::: base styles :::://
 
+//couldnt figure out how to use my custom font =(
+
+// @font-face {
+//   font-family: Muli;
+//   src: url('../../assets/muli-font.ttf') format('ttf');
+// }
+
 p {
-  font-family: sans-serif;
+  font-family: url('../../assets/muli-font.ttf');
   color: $font-color;
 }
 
@@ -30,21 +37,26 @@ header {
 
 .logo-container {
   display: inline-block;
-  margin: 1% 0% 3% 3%;
+  margin: 2% 0% 3% 3%;
+  position: relative;
 
   h1 {
-    display: inline;
-    font-size: 22px
+    display: inline-block;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    left: 50px;
   }
 
   #logo {
-    display: inline;
+    display: inline-block;
+    position: absolute;
   }
 }
 
 .nav-bar {
   display: inline-block;
-  margin: 0% 0% 3% 40%;
+  margin: 0% 0% 3% 50%;
 
   ul {
     display: inline;
@@ -54,7 +66,7 @@ header {
       padding: 0px 10px 0px 10px;
 
       a {
-        font-size: 22px;
+        font-size: 20px;
       }
     }
   }
@@ -84,7 +96,7 @@ header {
   }
   p {
     display: inline;
-    padding: 0 0 0 8px;
+    padding: 0 0 0 10px;
   }
 }
 
