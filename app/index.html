@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app='cowsayApp'>
+  <head>
+    <title>Cowsville!</title>
+  </head>
+  <body>
+    <header>
+      <nav ng-controller="NavController as navCtrl">
+        <ul>
+          <li class="app-title">cowcontrol.io</li>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{route.name}}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'moose'"
+        >
+        <div class="slogan-wrapper">
+          <h2 class="slogan-title">{{cowsayCtrl.title}}</h2>
+          <h3 class="slogan">{{cowsayCtrl.slogan}}</h3>
+        </div>
+
+        <pre class="cow">
+          {{cowsayCtrl.update(cowsayCtrl.text)}}
+        </pre>
+
+        <form ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+        name="cowsayForm"
+        novalidate>
+          <aside class="">
+            <div class="aside-wrapper"> Select a cowfile
+              <select ng-model="cowsayCtrl.current">
+                <option
+                ng-repeat="cowfile in cowsayCtrl.cowfiles"
+                value="{{ cowfile }}">
+                {{cowfile}}
+                </option>
+              </select>
+            </div>
+            <div class="aside-wrapper">What does it say?
+              <input type="text" ng-model="cowsayCtrl.text" required>
+
+            </div>
+            <div class="aside-wrapper">View it!
+              <button type="submit">CLICK TO VIEW</button>
+            </div>
+          </aside>
+          <div ng-show="cowsayCtrl.spoken" class="history">
+            <div class="slogan-wrapper">
+              <h2 class="slogan-title">view it!</h2>
+              <h3 class="slogan">check out the cow you just made</h3>
+            </div>
+            <pre class="cow">
+              {{cowsayCtrl.spoken}}
+            </pre>
+            <aside class="history-aside">
+              <button class="undo" type="button" ng-click="cowsayCtrl.undo()">Undo</button>
+            </aside>
+          </div>
+        </form>
+      </section>
+      <!-- <footer>
+        <span class="footer-span">cowcontrol.io</span>
+      </footer> -->
+    </main>
+  </body>
+</html>
