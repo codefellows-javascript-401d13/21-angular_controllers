@@ -13,7 +13,7 @@ swaggycowApp.controller('SwaggycowController', ['$log', SwaggycowController]);
 function SwaggycowController($log) {
   $log.debug('SwaggycowController');
 
-  this.title = 'Swaggiest Creature of the Land';
+  this.title = 'swag animal creator.';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {

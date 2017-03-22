@@ -6,6 +6,7 @@
   </head>
   <body>
     <header ng-controller="NavController as navCtrl">
+      <h1>Swaggy Cow</h1>
       <nav>
         <ul>
           <li ng-repeat="route in navCtrl.routes">
@@ -20,32 +21,62 @@
       class="container"
       ng-controller="SwaggycowController as swaggycowCtrl"
       ng-init="swaggycowCtrl.current = 'koala'">
-      <h2>{{ swaggycowCtrl.title }}</h2>
 
-      <pre class="cow">
-        {{ swaggycowCtrl.update(swaggycowCtrl.text) }}
-      </pre>
+      <div class="section">
+        <div class="section-top">
+          <h2>{{ swaggycowCtrl.title }}</h2>
+          <span>make it, view it, undo it!</span>
+        </div>
 
-      <form
-        ng-submit="swaggycowCtrl.speak(swaggycowCtrl.text)"
-        name="swaggycowForm"
-        no validate>
-        <select ng-model="swaggycowCtrl.current">
-          <option ng-repeat="cowfile in swaggycowCtrl.cowfiles" value="{{ cowfile }}">
-            {{ cowfile }}
-          </option>
-        </select>
+        <div class="section-right">
+          <pre class="cow">
+            {{ swaggycowCtrl.update(swaggycowCtrl.text) }}
+          </pre>
+        </div>
 
-        <input type="text" ng-model="swaggycowCtrl.text" required>
-        <button type="submit">Speak!</button>
+        <div class="section-left">
+          <form
+          ng-submit="swaggycowCtrl.speak(swaggycowCtrl.text)"
+          name="swaggycowForm"
+          no validate>
 
-        <div ng-show="swaggycowCtrl.spoken" class="history">
+          <label for="cowfile-select">Select creature</label>
+          <select ng-model="swaggycowCtrl.current" id="cowfile-select">
+            <option ng-repeat="cowfile in swaggycowCtrl.cowfiles" value="{{ cowfile }}">
+              {{ cowfile }}
+            </option>
+          </select>
+
+          <label for="cowtext-input">Say what</label>
+          <input type="text" ng-model="swaggycowCtrl.text" require id="cowtext-input">
+
+          <label for="cowtext-input">Check it!</label>
+          <button type="submit" id="view-button">Click to check it</button>
+        </form>
+        </div>
+
+      </div>
+
+      <div ng-show="swaggycowCtrl.spoken" class="section">
+        <div class="section-top">
+          <h2>view it!</h2>
+          <span>check out your swag</span>
+
+        </div>
+
+        <div class="section-right">
           <pre>
             {{ swaggycowCtrl.spoken }}
           </pre>
+        </div>
+
+        <div class="section-left">
           <button type="button" ng-click="swaggycowCtrl.undo()">Undo!</button>
         </div>
-      </form>
+
+      </div>
+
+
     </section>
   </main>
 

@@ -1,0 +1,137 @@
+// :::: $vars ::::
+
+$black: #000;
+$white: #fff;
+$primary-color: #494949;
+$btn-primary: $primary-color * 1;
+$btn-hover: $black;
+$box-std: 100%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+$outline: 2px solid $primary-color;
+$border-rad: 6px;
+
+// :::: global styles ::::
+
+body {
+  font-family: helvetica;
+  font-size: 3.2vw;
+  background: $primary-color * 3;
+  color: $primary-color;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: $gutter-std;
+}
+
+button {
+  width: 100%;
+  padding: 3% 0;
+  margin-bottom: 20px;
+  background: $btn-primary;
+  color: $white;
+  border: none;
+  border-radius: $border-rad;
+  cursor: pointer;
+  transition: 350ms all;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+
+select, input[type="text"] {
+  border: $outline;
+  width: 100%;
+  margin-bottom: 2%;
+  padding: 2% 0;
+  border-radius: $border-rad;
+}
+
+select {
+  background: $primary-color * 2.3;
+  color: $white;
+}
+
+label {
+  font-size: 2.75vw;
+  margin-bottom: $gutter-sm;
+};
+
+
+// :::: app styles ::::
+
+header {
+  background: $primary-color;
+  color: $primary-color * 2.5;
+  height: 4vw;
+  padding: 2vw;
+
+  h1 {
+    float: left;
+  }
+
+  nav {
+    margin-bottom: $gutter-std;
+    float: right;
+
+    li {
+      display: inline-block;
+      margin-right: 3vw;
+
+      a {
+        color: $primary-color * 2.5;
+      }
+    }
+  }
+}
+
+pre {
+  overflow: none;
+  // width: 70%;
+  font-family: monospace;
+  margin: $gutter-std;
+}
+
+.section {
+  clear: both;
+  margin-top: $gutter-std;
+
+  .section-top {
+    margin-bottom: $gutter-std;
+    h2 {
+      display: inline;
+    }
+
+    span {
+      margin-left: $gutter-sm;
+      font-size: 2.2vw;
+    }
+  }
+
+  .section-right {
+    clear: both;
+    width: 65%;
+    float: left;
+    outline: $outline;
+  }
+
+  .section-left {
+    margin-left: $gutter-std;
+    display: inline-block;
+    width: 30%;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
