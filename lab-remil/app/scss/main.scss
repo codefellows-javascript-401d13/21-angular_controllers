@@ -49,6 +49,7 @@ button {
 
 
 select, input[type="text"] {
+  box-sizing: border-box;
   border: $outline;
   width: 100%;
   margin-bottom: 2%;
@@ -94,6 +95,12 @@ header {
   }
 }
 
+footer {
+  background: $primary-color * 2.3;
+  clear: both;
+  height: 12vw;
+}
+
 pre {
   overflow: none;
   // width: 70%;
@@ -103,7 +110,8 @@ pre {
 
 .section {
   clear: both;
-  margin-top: $gutter-std;
+  margin: $gutter-std 0;
+  overflow: hidden;
 
   .section-top {
     margin-bottom: $gutter-std;
@@ -117,21 +125,49 @@ pre {
     }
   }
 
+  .section-bottom {
+    overflow: auto;
+    position: relative;
+  }
+
   .section-right {
     clear: both;
     width: 65%;
     float: left;
-    outline: $outline;
+    // outline: $outline;
+    box-sizing: border-box;
+    border: $outline;
+    // height: 100%;
   }
 
   .section-left {
     margin-left: $gutter-std;
     display: inline-block;
     width: 30%;
+    box-sizing: border-box;
+    height: 100%;
+
+    position: absolute;
+    bottom: 0;
+    top: 0;
+
   }
+}
+
+.break {
+  height: .5vh;
+  background: $primary-color * 2.3;
+  margin: $gutter-std 0;
 }
 
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
