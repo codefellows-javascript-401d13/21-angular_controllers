@@ -13,7 +13,7 @@ mooMooApp.controller('CowsayController', ['$log', CowsayController]);
 function CowsayController($log) {
   $log.debug(CowsayController);
 
-  this.title = 'Cowsay Whaaa?';
+  this.title = 'Cow Creator.';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
