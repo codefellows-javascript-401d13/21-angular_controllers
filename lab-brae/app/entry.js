@@ -13,7 +13,7 @@ cowsayApp.controller('CowsayController', ['$log', CowsayController]);
 function CowsayController($log) {
   $log.debug('CowsayController');
 
-  this.title = 'Welcome to Cowville';
+  this.title = 'cow creator. make it, view it, and undo it!';
   this.history = [];
 
   cowsay.list((err, cowfiles) => {
@@ -23,7 +23,7 @@ function CowsayController($log) {
 
   this.update = function(input) {
     $log.debug('cowsayCtrl.update()');
-    return cowsay.say({ text: input || 'moo?', f: this.current });
+    return cowsay.say({ text: input || 'cowcontrol.io', f: this.current });
   };
 
   this.speak = function(input) {

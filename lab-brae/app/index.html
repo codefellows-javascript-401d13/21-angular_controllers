@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="cowsayApp">
   <head>
-    <title>Welcome to Cowville!</title>
+    <title>cow creator</title>
   </head>
   <body>
     <header>
@@ -19,7 +19,7 @@
       <section
         class="container"
         ng-controller="CowsayController as cowsayCtrl"
-        ng-init="cowsayCtrl.current = 'squirrel'">
+        ng-init="cowsayCtrl.current = 'default'">
         <h2>{{ cowsayCtrl.title }}</h2>
 
         <pre class="cow">

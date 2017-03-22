@@ -4,17 +4,40 @@ body {
   background: #d8d8d8;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+pre {
+  overflow: auto;
+  width: 100%;
+  border: 2px solid black;
+  font-family: Ubuntu Mono;
+  margin: 5%;
+}
+
+
 nav {
   height: 4vw;
   background: #4a4a4a;
   padding: 2vw;
   margin-bottom: 5%;
+
+  li {
+    display: inline-block;
+    margin-right: 3vw;
+  }
+
+  a {
+    font-size: 3vw;
+    color: #9b9b9b;
+    margin-right: 55%;
+  }
 }
 
-/* Container Border */
 .container {
-  border: 2px solid #B22222;
-
-// margin-top: 15px;
-// margin-bottom: 15px;
+  width: 80%;
+  margin-left: 10%;
 }
