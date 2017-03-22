@@ -10,10 +10,28 @@ a {
   cursor: pointer;
 }
 
+h2 {
+  font-size: 1vw;
+  margin-bottom: 5%;
+  color: #4a4a4a;
+}
+
+button {
+  width: 25%;
+  padding: 2% 0;
+  margin-bottom: 20px;
+  background: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 350ms all;
+}
+
 pre {
   overflow: auto;
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid #4a4a4a;
   font-family: Ubuntu Mono;
   margin: 5%;
 }
@@ -28,16 +46,21 @@ nav {
   li {
     display: inline-block;
     margin-right: 3vw;
-  }
-
+  
   a {
     font-size: 3vw;
     color: #9b9b9b;
     margin-right: 55%;
+    }
   }
 }
 
 .container {
   width: 80%;
   margin-left: 10%;
+}
+
+#righttop {
+  float: right;
+
 }

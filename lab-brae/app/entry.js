@@ -50,8 +50,8 @@ function NavController($log) {
       url: '/home'
     },
     {
-      name: 'about',
-      url: '/about-us'
+      name: 'cow creator',
+      url: '/cow-creator'
     },
     {
       name: 'contact',

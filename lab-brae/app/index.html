@@ -30,7 +30,7 @@
           ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
           name="cowsayForm"
           no validate>
-
+          <div id="righttop">
           <select ng-model="cowsayCtrl.current">
             <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
               {{ cowfile }}
@@ -39,12 +39,14 @@
 
           <input type="text" ng-model="cowsayCtrl.text" required>
           <button type="submit">Speak!</button>
-
+          </div>
+          <div id="rightbottom">
           <div ng-show="cowsayCtrl.spoken" class="history">
             <pre>
               {{ cowsayCtrl.spoken }}
             </pre>
             <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
+          </div>
           </div>
         </form>
       </section>
