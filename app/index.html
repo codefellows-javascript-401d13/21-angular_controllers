@@ -21,9 +21,11 @@
 			ng-init="cowsayCtrl.current = 'squirrel'">
 			<h2>{{ cowsayCtrl.title }}</h2>
 
-			<pre class="cow">
-				{{ cowsayCtrl.update(cowsayCtrl.text) }}
-			</pre>
+			<div class="cow-container">
+				<pre class="cow">
+					{{ cowsayCtrl.update(cowsayCtrl.text) }}
+				</pre>
+			</div>
 
 			<form
 				ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
