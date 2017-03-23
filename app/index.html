@@ -16,10 +16,12 @@
     </header>
 
     <main>
+
       <section
         class="container"
         ng-controller="CowsayController as cowsayCtrl"
         ng-init="cowsayCtrl.current = 'squirrel'">
+
         <h2>{{ cowsayCtrl.title }}</h2>
 
         <pre class="cow">
@@ -30,16 +32,17 @@
           ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
           name="cowsayForm"
           no validate>
-          <h4>Select a cowfile</h4>
+            <h2>Select a cowfile</h2>
+
           <select ng-model="cowsayCtrl.current">
             <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
               {{ cowfile }}
             </option>
           </select>
-
+          <h2>What does it say?</h2>
           <input type="text" ng-model="cowsayCtrl.text" required>
-          <h4>What does it say?</h4>
-          <button type="submit">Speak!</button>
+
+          <button type="submit">Click to view</button>
 
           <div ng-show="cowsayCtrl.spoken" class="history">
 
