@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+//
+// // global variables
+$font : Montserrat, sans-serif;
+$lightgray : #abaeb2;
+$medgray : #787d84;
+$darkgray : #333538;
+
+
+// $black: #000;
+//
+//
+//header
+header {
+  background-color: $medgray;
+  height: 5vw;
+  width: 100%;
+  // margin: 0 6% 0;
+  };
+
+  h1{
+    font-family: $font;
+    color: $darkgray;
+    text-decoration: none;
+    flex-direction: column;
+    padding-top: 2vw;
+    padding-left: 5vw;
+
+  };
+
+ nav{
+    float: right;
+    ul li{
+      display: inline-block;
+      margin-right: 3vw;
+      margin-left: 3vw;
+      padding-bottom: 350px;
+    }
+  };
+
+a{
+  text-decoration: none;
+  color: $darkgray;
+  font-family: $font;
+&:hover{
+  text-decoration: underline;
+    }
+ };
+
+main{
+    background-color: $lightgray;
+    height: 100%;
+    width: 80%;
+    margin: 0 6% 0 6%;
+    outline: orange solid 1px;
+}
+.container{
+  background-color: $lightgray;
+  outline: pink 1px solid;
+  height: 25%;
+  width: 80%;
+  padding-top: 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-left: 6vw;
+};
+
+.cow{
+  outline: black 1px solid;
+  width: 40%;
+}
+
+// .history{
+//   outline: black 1px solid;
+// }
+//centering
+form{
+  outline: blue 1px solid;
+  float: right;
+  margin: -25vw 15vw 15vw 40vw;
+  // padding: 10vw 10vw 10vw 10vw;
+  // clear: both;
+  // display: flex;
+  // justify-content: flex-end;
+}
+pre{
+  outline: pink solid 3px;
+}
+option{
+  outline: green solid 4px;
+}
+//buttons
+button{
+  height: 3vw;
+  width: 20vw;
+  border-radius: 10%;
+  font-family : $font;
+}
+footer{
+  background-color: $medgray;
+  min-height: 140%;
+  width: 80%;
+  margin-left: 6%;
+  margin-right: 6%;
+  // flex: 1;
+
+h6{
+    font-family: $font;
+    justify-content: flex-end;
+}
+};
