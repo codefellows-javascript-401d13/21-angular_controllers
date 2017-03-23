@@ -30,11 +30,12 @@ header {
 
  nav{
     float: right;
+    margin-bottom: 50px;
     ul li{
       display: inline-block;
       margin-right: 3vw;
       margin-left: 3vw;
-      padding-bottom: 350px;
+      padding-bottom: 450px;
     }
   };
 
@@ -48,29 +49,29 @@ a{
  };
 body{
   background-color: $lightgray;
-}
+};
 main{
     background-color: $lightgray;
     height: 40vw;
     width: 100%;
     margin: 0 6% 0 6%;
     outline: orange solid 1px;
-}
+};
 .container{
   background-color: $lightgray;
   outline: pink 1px solid;
   height: 40vw;
   width: 80%;
   padding-top: 5vw;
-  padding-left: 5vw;
+  // padding-left: 5vw;
   padding-right: 5vw;
-  margin-left: 6vw;
+  // margin-left: 6vw;
 };
 
 .cow{
-  outline: black 1px solid;
-  width: 40%;
-}
+  outline: hotpink 10px solid;
+  width: 60%;
+};
 
 .history{
   outline: purple 1px solid;
@@ -79,16 +80,16 @@ main{
 form{
   outline: blue 1px solid;
   float: right;
-  margin: -18.5vw 15vw 15vw 55vw;
-  padding-top: 2vw;
-  padding-bottom: 3vw;
+  margin: -65vw 0vw 35vw 55vw;
+  // padding-top: 2vw;
+  // padding-bottom: 3vw;
   // clear: both;
   // display: flex;
   // justify-content: flex-end;
-}
-pre{
-  outline: pink solid 33px;
 };
+// pre{
+//   outline: pink solid 33px;
+// };
 option{
   outline: green solid 24px;
 };
@@ -111,7 +112,7 @@ button{
   color: white;
   background-color: $darkgray;
   outline: black solid 1px;
-}
+};
 
 input{
   height: 1.8vw;
@@ -128,15 +129,15 @@ input{
 
 footer{
   background-color: $medgray;
-  min-height: 140%;
+  height: 100%;
   width: 80%;
   margin-left: 6%;
   margin-right: 6%;
-  // flex: 1;
+  outline: hotpink 6px dashed;
 
 h6{
     font-family: $font;
     // justify-content: flex-end;
     float: right;
-}
+   }
 };
