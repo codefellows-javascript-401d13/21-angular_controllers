@@ -3,7 +3,40 @@
 const HTMLPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
+const webpack2 = {
+  entry: `${__dirname}/app/entry.js`,
+  output: {
+    filename: 'bundles.js',
+    path: `${__dirname}/build`,
+  },
+  plugins: [
+    new HTMLPlugin({ template: `${__dirname}/app/index.html`}),
+    new ExtractTextPlugin('bundle.css'),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
+      },
+      {
+        test: /\.(eot|woff|tff|svg).*/,
+        use: 'url?limit=10000&name=fonts/[hash].[ext]',
+      },
+    ],
+  },
+};
+
+
+const webpack1 = { //eslint-disable-line
   entry: `${__dirname}/app/entry.js`,
   output: {
     filename: 'bundles.js',
@@ -31,3 +64,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = webpack2;
