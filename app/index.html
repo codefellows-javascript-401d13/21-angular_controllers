@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <title>Welcome to Cowville</title>
+  </head>
+  <body>
+    <header>
+      <nav ng-controller="NavController as navCtrl">
+        <img src="../img/cow-logo.png" height="60%" alt="">
+        <h5>cowcontrol.io</h5>
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ route.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="wrapper">
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'rabbit'">
+        <section>
+          <h2>{{ cowsayCtrl.title }}</h2> <h3>make it, view it, undo it.</h3>
+        </section>
+
+        <div class="animal">
+        <pre class="cow">
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+      </div>
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          novalidate>
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
+            </option>
+          </select>
+          <div class="inputbox">
+            <h5> <small>What does it say?</small></h5>
+            <input type="text" ng-model="cowsayCtrl.text" required>
+          </div>
+
+          <button type="submit">Say Something</button>
+
+          <div ng-show="cowsayCtrl.spoken" class="history">
+            <p>____________________________________________________________</p>
+            <section>
+              <h2>View It!</h2> <h3> check out the cow you just made</h3>
+            </section>
+            <div class= "animal">
+            <pre >
+              {{ cowsayCtrl.spoken }}
+            </pre>
+            </div>
+            <button class="undo" type="button" ng-click="cowsayCtrl.undo()">Undo</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <div class="push"></div>
+  </div>
+  <footer class="footer">control.io</footer>
+  </body>
+  </html>
