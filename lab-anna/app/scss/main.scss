@@ -1,0 +1,179 @@
+// :::: $vars ::::
+
+$brand-primary: #444;
+$btn-primary: $brand-primary / 2;
+$btn-hover: #31b1c1;
+$black: #000;
+$white: #fff;
+$box-std: 100%;
+$gutter-std: 5%;
+$gutter-sm: $gutter-std / 2;
+
+// :::: global styles ::::
+
+body {
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  border: 1px solid $brand-primary;
+  font-family: arial, sans-serif;
+  font-size: 2vw;
+  background: $brand-primary * 3;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 2vw;
+  text-align: left;
+}
+.slogan {
+  margin-left: $gutter-std;
+
+  h2 {
+    display: inline-block;
+  }
+  span {
+    font-size: 1.4vw;
+
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  width: 100%;
+  margin-bottom: 10%;
+  padding: 2%;
+  text-align: center;
+}
+
+input[type="text"] {
+  float: left;
+  width: 96%;
+  margin-top: 2%;
+  margin-bottom: 10%;
+  padding: 2%;
+  border: none;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  padding: 2% 0;
+  margin-bottom: 10%;
+  background: $btn-primary / 3;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 350ms all;
+
+  &:hover {
+    background: $btn-hover;
+  }
+}
+
+
+nav {
+  height: 3vw;
+  background: $black;
+  padding: 2vw;
+  margin-bottom: $gutter-std;
+  .cowhead {
+    float: left;
+    width: 5%;
+    height: 110%;
+    background: $brand-primary * 3;
+    border-radius: 100%;
+  }
+
+  h2 {
+    color: $brand-primary * 3;
+    display: inline-block;
+    // position: absolute;
+    top: 13vw;
+    font-size: 1.5vw;
+  }
+
+  ul {
+    float: right;
+    li {
+      display: inline-block;
+      margin-right: 3vw;
+      margin-left: 1vw;
+      a {
+        font-size: 2vw;
+        color: $brand-primary * 3;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+}
+
+
+.container {
+  width: 100%;
+
+  pre {
+    display: inline-block;
+    width: 50%;
+    height: 20%;
+    padding: 2%;
+    font-family: monospace;
+    margin: $gutter-std;
+    margin-top: $gutter-std / 2;
+    border: 1px solid $black;
+    overflow: auto;
+  }
+
+
+  form {
+    margin-top: 3%;
+    float: right;
+
+    width: 30%;
+    padding: 2%;
+  }
+}
+
+.line {
+  width: 80%;
+  outline: 1px solid $black;
+  margin: auto;
+
+}
+
+.history {
+  margin-top: 5%;
+
+  button {
+    width: 100%;
+    height: 3%;
+    padding: 2% 0;
+    display: inline-block;
+    margin-top: 60%;
+    right: 11.5%;
+  }
+}
+
+.text-binder {
+  height: 15vw;
+  font-size: 3vw;
+  margin: $gutter-std;
+  padding: 1vw;
+  color: $white;
+  background: $brand-primary / 3;
+  border: dotted .25vw $brand-primary;
+
+  + input {
+    width: 100%;
+  }
+}

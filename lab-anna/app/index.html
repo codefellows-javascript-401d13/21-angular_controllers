@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="cowsayApp">
+  <head>
+    <title>Welcome to Cowville!</title>
+  </head>
+  <body>
+    <header ng-controller="CowsayController as cowsayCtrl">
+      <nav ng-controller="NavController as navCtrl">
+        <div class="cowhead"></div>
+        <h2>{{ cowsayCtrl.brand }}</h2>
+        <ul>
+          <li ng-repeat="route in navCtrl.routes">
+            <a href="{{ link.url }}">{{ route.name }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="container"
+        ng-controller="CowsayController as cowsayCtrl"
+        ng-init="cowsayCtrl.current = 'default'">
+
+        <div class="slogan">
+          <h2>{{ cowsayCtrl.title }}</h2>
+          <span>{{ cowsayCtrl.slogan }}</span>
+        </div>
+
+        <pre class="cow">
+          {{ cowsayCtrl.update(cowsayCtrl.text) }}
+        </pre>
+
+        <form
+          ng-submit="cowsayCtrl.speak(cowsayCtrl.text)"
+          name="cowsayForm"
+          no validate>
+          <h2>Select a cowfile.</h2>
+          <select ng-model="cowsayCtrl.current">
+            <option ng-repeat="cowfile in cowsayCtrl.cowfiles" value="{{ cowfile }}">
+              {{ cowfile }}
+            </option>
+          </select>
+
+          <h2>What does it say?</h2>
+          <input type="text" ng-model="cowsayCtrl.text" required>
+
+          <h2>View it!</h2>
+          <button type="submit">click to view</button>
+        </form>
+        <div class="line"></div>
+        <div ng-show="cowsayCtrl.spoken" class="history">
+          <pre>
+            {{ cowsayCtrl.spoken }}
+          </pre>
+          <form class="" action="index.html" method="post">
+            <button type="button" ng-click="cowsayCtrl.undo()">Undo!</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
