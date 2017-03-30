@@ -4,7 +4,8 @@
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 21 - Angular Controllers ======",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
   },
   "keywords": [],
   "author": "",
